@@ -5,3 +5,10 @@ CREATE TABLE books (
     published integer              ,
     PRIMARY KEY (isbn)
 )
+
+CREATE TABLE outbox (
+    id       uuid NOT NULL,
+    headers  jsonb,
+    payload  jsonb NOT NULL,
+    PRIMARY KEY (id)
+)

@@ -12,4 +12,5 @@ public interface BookRepository extends JpaRepository<Book, String> {
     default void deleteByIsbn(String isbn) {
         deleteById(isbn);
     }
+
 }

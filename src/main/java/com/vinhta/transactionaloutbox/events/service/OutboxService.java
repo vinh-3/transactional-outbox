@@ -20,12 +20,12 @@ public class OutboxService {
         outboxRepository.save(
                 OutboxEvent.builder()
                         .headers(headers)
-                        .payload(toJSONString(body))
+                        .payload(jsonStringify(body))
                         .build()
         );
     }
 
-    private String toJSONString(Object value) {
+    private String jsonStringify(Object value) {
         try {
             return objectMapper.writeValueAsString(value);
         } catch (JsonProcessingException exception) {
